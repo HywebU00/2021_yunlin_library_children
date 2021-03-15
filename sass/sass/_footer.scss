@@ -1,0 +1,130 @@
+footer {
+    @include box-sizing(border-box);
+    @include clearfix;
+    text-align: left;
+    font-size: 0.813em;
+    padding: 0 0 1em 0;
+    background: $primaryColor;
+
+    &:before {
+        content: "";
+        //position: absolute;
+        display: block;
+        height: 70px;
+        width: 100%;
+        background: $color-bg-2 url(../images/wave_bottom.png) repeat-x center top;
+    }
+
+    .container {
+        @include gutter;
+
+        >div {
+            padding-bottom: 1em;
+            justify-content: space-between;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: #fff;
+
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+
+    .footer_bottom {
+        display: flex;
+        align-items: center;
+        border-top: 1px solid #fff;
+        @include screen('mobile'){
+            flex-wrap: wrap;
+        }
+
+    }
+    p.Copyright{
+        @include screen('mobile'){
+            margin: 0;
+        }
+    }
+
+    // 版權連結
+    .footer_link {
+        @include li-reset();
+        @include clearfix();
+        @include screen('mobile'){
+            width: 100%;
+            margin: 1em 0;
+        }
+
+        li {
+            float: left;
+            display: block;
+            margin: 0px 5px 0 0px;
+
+            a {
+                display: block;
+                padding: 0;
+                margin-right: 1em;
+                background: $primaryColor;
+                color: #FFF;
+                border-radius: 4px;
+                @include transition(all, .3s, ease-out);
+
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    p {
+        line-height: 1.65em;
+        color: #fff;
+    }
+
+    .update,
+    .counter {
+        display: inline-block;
+        margin-right: 5px;
+        color: #fff;
+
+        em {
+            font-style: normal;
+            color: #fff;
+            padding: 0 .5em;
+        }
+    }
+
+    .footer_icon {
+        ul {
+            @include li-reset;
+            display: flex;
+        }
+
+        li {
+            margin-right: .5em;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 50px;
+                height: 50px;
+                border: 3px solid #fff;
+                text-align: center;
+                border-radius: 50px;
+                &:hover{
+                    img{
+                        width: 70%;
+                    }
+                }
+            }
+            img {
+                width: 60%;
+                transition: .2s ease-in;
+            }
+        }
+    }
+}

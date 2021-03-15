@@ -1,0 +1,201 @@
+.main_nav{
+    position: relative;
+    @include screen('mobile'){
+        @include gutter();
+        margin-bottom: 40px;
+    }
+    .container{
+        padding: 73px 0 0 0;
+        background: #fff url(../images/bg_square.jpg) top center;
+        @include gutter();
+        @include screen('mobile'){
+            padding-top: 37px;
+        }
+        &:before{
+            content:"";
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: block;
+            height: 71px;
+            width: 100%;
+            background: url(../images/bg_2.jpg);
+            @include screen('mobile'){
+                height: 35px;
+            }
+        }
+    }
+    .main_pic{
+        position: absolute;
+        top: -30px;
+        left: -80px;
+        justify-content: flex-end;
+        @include screen('tablet'){
+            width: 50%;
+            max-width: 250px;
+            top: auto;
+            bottom: -60px;
+            left: -90px;
+        }
+    }
+}
+
+.nav_content{
+    position: relative;
+    z-index: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+    min-height: 504px;
+    @include screen('mobile'){
+        justify-content: center;
+    }
+    
+    ul{
+        @include li-reset;
+        padding-bottom: 40px;
+        display: flex;
+        align-items: flex-end;
+        @include screen('mobile'){
+            flex-direction: column;
+        }
+    }
+    li{
+        padding: 0 25px;
+        @include screen('mobile'){
+            margin-bottom: 2em;
+        }
+
+        a{
+            display: block;
+            text-align: center;
+            >img{
+                transition: .2s ease-in;
+            }
+            &:hover{
+                >img{
+                    transform: translateY(-5px) scale(1.1);
+                }
+                .nav_tab{
+                    height: 65px;
+                    img{
+                        padding-bottom: 3px;
+                    }
+                }
+            }
+        }
+        .nav_tab{
+            position: relative;
+            padding: 0 1.5em;
+            margin: 1em 0;
+            height: 70px;
+            background: darken($importantColor, 10);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 80px;
+            transition: .2s ease-in;
+            @include screen('mobile'){
+                margin: 0;
+            }
+            &:before{
+                content:"";
+                display: block;
+                position: absolute;
+                height: 58px;
+                width: 100%;
+                top: 0;
+                left: 0;
+                background: $importantColor;
+                border-radius: 80px/70px;
+                z-index: 0;
+            }
+            img{
+                padding-bottom: 6px;
+                width: 140px;
+                z-index: 2;
+                transition: .2s ease-in;
+            }
+        }
+    }
+}
+.book_display{
+    @include screen('mobile'){
+        @include gutter();
+    }
+    .container{
+        background: #fff url(../images/bg_square.jpg) top center;
+        @include gutter();
+        padding-bottom: 84px;
+        &:before{
+            content:"";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            display: block;
+            height: 36px;
+            width: 100%;
+            background: url(../images/bg_2.jpg);
+        }
+        
+    }
+    .col{
+        @include gutter(5px);
+        &:first-child{
+            .bookSlider{
+                &:before{
+                    transform: rotate(-5deg);
+                }
+            }
+        }
+        &:last-child{
+            .bookSlider{
+                &:before{
+                    transform: rotate(3deg);
+                }
+            }
+        }
+    }
+    h2{
+        text-align: center;
+        img{
+            width: 150px;
+        }
+    }
+}
+.bookSlider{
+    position: relative;
+    z-index: 10;
+    &:before{
+        content:"";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: url(../images/book_bg.png) no-repeat;
+        background-size: contain;
+    }
+    
+    .img-container{
+        background: none;
+        img{
+            object-fit: contain;
+        }
+    }
+    .book_wrap{
+        padding: 30px 15px 20px;
+    }
+    .book_name{
+        text-align: center;
+        font-size: 1.375em;
+        color: $color-word-2;
+        font-weight: bold;
+        margin: .5em 0 2em 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
