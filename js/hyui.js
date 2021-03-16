@@ -57,7 +57,7 @@ $(function() {
         _sidebar.show();
         _mArea.show();
         _mArea.animate({
-            'margin-left': 0
+            'margin-right': 0
         }, 400, 'easeOutQuint');
         _body.addClass('noscroll');
         _overlay.fadeIn();
@@ -66,7 +66,7 @@ $(function() {
     }
     // 縮合選單 function
     function hideSidebar() {
-        _mArea.animate({ 'margin-left': _mArea.width() * -1 + 'px' }, 500, 'easeOutQuint', function() {
+        _mArea.animate({ 'margin-right': _mArea.width() * -1 + 'px' }, 500, 'easeOutQuint', function() {
             _sidebar.fadeOut(200);
             _mArea.hide();
         });
